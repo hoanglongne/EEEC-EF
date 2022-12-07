@@ -4,9 +4,24 @@ import Card from '../components/Card.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
+	<head>
+		<title>Site</title>
+		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+	</head>
+	<body>
 		Hello World!
-	</main>
+		<script>
+  		if (window.netlifyIdentity) {
+    		window.netlifyIdentity.on("init", user => {
+      		if (!user) {
+        		window.netlifyIdentity.on("login", () => {
+          		document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+	</body>
 </Layout>
 
 <style>
