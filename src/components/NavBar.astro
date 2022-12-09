@@ -1,0 +1,71 @@
+<nav class="navbar">
+    <div class="logo"> 
+        <img src="/src/images/Logo.svg" alt="EEEC logo">
+    </div>
+    
+
+    <ul class="nav-list">
+        <li class="nav-item"><a>About</a></li>
+        <li class="nav-item"><a>Projects</a></li>
+        <li class="nav-item"><a>News</a></li>
+        <li class="nav-item"><a>Departments</a></li>
+    </ul>
+    
+    <div class="admin-login">
+        <a href="/admin"><img class="admin-icon" src="/src/images/Group 110.svg" alt=""></a>
+    </div>
+</nav>
+
+<style>
+    .navbar {
+        display: flex;
+        justify-content:space-between;
+        width: 100%;
+        padding: 10px 0px;
+        font-family: 'Bungee';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 11px;
+    }
+    .logo{
+        padding: 10px 20px;
+    }
+
+    .logo img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width:150px
+    }
+
+    .admin-login {
+        padding: 15px 25px;
+        padding-left:40px;
+    }
+
+    .admin-icon {
+        width:25px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .nav-list {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        gap: 40px;
+
+    }
+
+    .nav-item {
+        margin-right: 20px;
+        letter-spacing: 0.01em;
+        color: rgba(31, 36, 81, 0.56);
+        cursor: pointer;
+    }
+
+</style>
