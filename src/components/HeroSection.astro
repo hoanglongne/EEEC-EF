@@ -52,7 +52,7 @@
 
 
 </section>
-<script>
+<script is:inline>
 const thumb1 = document.querySelector('#thumbchange1');
 const thumb2 = document.querySelector('#thumbchange2');
 const thumb3 = document.querySelector('#thumbchange3');
@@ -81,6 +81,7 @@ thumb1.addEventListener('click', (e) => {
 thumb2.addEventListener('click', (e) => {
       e.preventDefault();
       hero.src = "https://i.ibb.co/rb6PQW6/Hero2.png"
+      console.log("ádasdasd")
       title.classList?.remove('text-red')
       title.classList?.remove('text-hero3')
       title.classList?.remove('text-hero4')
