@@ -21,10 +21,10 @@
     <div class="pb-20">
         <img src="https://i.ibb.co/1Ky9Tpd/Group-114.png" id="hero" alt="bigHero1" class="object-cover h-[500px] -mt-16">
         <div class="flex mt-4 gap-6 ml-20">
-            <a class="thumbchange1"><img class="object w-12 hover:translate-y-2 ease-in duration-100" src="https://i.ibb.co/p3SGJww/thumb1.png"  alt="thumb1"></a>
-            <a class="thumbchange2"><img class="object w-12 hover:translate-y-2 ease-in duration-100" src="https://i.ibb.co/Mkzqhwn/thumb2.png" alt="thumb2"/></a>
-            <a class="thumbchange3"><img class="object w-12 hover:translate-y-2 ease-in duration-100" src="https://i.ibb.co/bBXnWHH/thumb3.png"  alt="thumb3"/></a>
-            <a class="thumbchange4"><img class="object w-12 hover:translate-y-2 ease-in duration-100" src="https://i.ibb.co/zPcnd66/thumb4.png"  alt="thumb4"/></a>
+            <a id="thumbchange1"><img class="object w-12 hover:translate-y-2 ease-in duration-100" src="https://i.ibb.co/p3SGJww/thumb1.png"  alt="thumb1"></a>
+            <a id="thumbchange2"><img class="object w-12 hover:translate-y-2 ease-in duration-100" src="https://i.ibb.co/Mkzqhwn/thumb2.png" alt="thumb2"/></a>
+            <a id="thumbchange3"><img class="object w-12 hover:translate-y-2 ease-in duration-100" src="https://i.ibb.co/bBXnWHH/thumb3.png"  alt="thumb3"/></a>
+            <a id="thumbchange4"><img class="object w-12 hover:translate-y-2 ease-in duration-100" src="https://i.ibb.co/zPcnd66/thumb4.png"  alt="thumb4"/></a>
         </div>
     </div>
     
@@ -58,10 +58,10 @@
 
 
 <script>
-const thumb1 = document.querySelector('a.thumbchange1');
-const thumb2 = document.querySelector('a.thumbchange2');
-const thumb3 = document.querySelector('a.thumbchange3');
-const thumb4 = document.querySelector('a.thumbchange4');
+const thumb1 = document.querySelector('#thumbchange1');
+const thumb2 = document.querySelector('#thumbchange2');
+const thumb3 = document.querySelector('#thumbchange3');
+const thumb4 = document.querySelector('#thumbchange4');
 const hero = document.querySelector('#hero')
 const subtitle = document.querySelector('#job_subtitle')
 const title = document.querySelector('#job_title')
