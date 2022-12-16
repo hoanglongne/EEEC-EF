@@ -1,16 +1,16 @@
 
-<section class="grid gap-6 grid-cols-3 text-center mt-28">
+<section class="grid gap-6 grid-cols-3 text-center mt-28 px-24">
     <div>
-        <h1 class="font-sans text-5xl text-left whitespace-pre-line text-main-blue drop-shadow-pink">BRING THE 
+        <h1 class="font-sans text-5xl fade1 text-left whitespace-pre-line text-main-blue drop-shadow-pink">BRING THE 
         WHOLE WORLD TOGETHER!</h1>
         <div class="flex mt-28">
             <div>
             <img src="https://i.ibb.co/sbC3dWZ/Group-115.png" alt="left-illustration" class="object-cover w-40 pt-2" />
             </div>
             <ul class="flex flex-col gap-y-5 text-xl ml-8 tracking-widest items-start list-none font-display text-gray-blue">
-                <li>English</li>
-                <li>Exchange</li>
-                <li>Events</li>
+                <li class="fade1">English</li>
+                <li class="fade1">Exchange</li>
+                <li class="fade1">Events</li>
             </ul>
         </div>
     </div>
@@ -27,7 +27,7 @@
     
     <div class="ml-6 flex flex-col justify-between">
         <div>
-        <h1 id="job_title" class="text-red text-left font-display ml-3 text-xl">HEAD OF PUBLIC RELATIONS</h1>
+        <h1 id="job_title" class="text-red text-left font-display ml-3 text-xl fade2">HEAD OF PUBLIC RELATIONS</h1>
             <!-- <svg class="inline" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M0.666748 3C0.666748 1.55025 1.78604 0.375 3.16675 0.375H11.0834C12.4641 0.375 13.5834 1.55025 13.5834 3V3.40358L16.1616 2.20041C16.4194 2.08012 16.7176 2.10492 16.9542 2.26632C17.1907 2.42772 17.3334 2.70381 17.3334 3V10C17.3334 10.2962 17.1907 10.5723 16.9542 10.7337C16.7176 10.8951 16.4194 10.9199 16.1616 10.7996L13.5834 9.59642V10C13.5834 11.4497 12.4641 12.625 11.0834 12.625H3.16675C1.78604 12.625 0.666748 11.4497 0.666748 10V3ZM7.33341 3H4.00008V4.75H7.33341V3Z" fill="#D3636A"/>
             </svg>
@@ -37,8 +37,8 @@
             <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8983 6.17241L11.3459 4.92964L12.7167 4.32043L13.269 5.56321C13.9585 7.1146 13.9585 8.88548 13.269 10.4369L12.7167 11.6796L11.3459 11.0704L11.8983 9.82766C12.4154 8.66412 12.4154 7.33596 11.8983 6.17241Z" fill="#D3636A"/>
             <path fill-rule="evenodd" clip-rule="evenodd" d="M14.0071 5.69232L13.2139 3.78847L14.5985 3.21155L15.3918 5.11539C16.161 6.96155 16.161 9.03847 15.3918 10.8846L14.5985 12.7885L13.2139 12.2115L14.0071 10.3077C14.6225 8.83078 14.6225 7.16924 14.0071 5.69232Z" fill="#D3636A"/>
             </svg> -->
-            <h6 id="job_subtitle" class="text-xs font-display text-left text-light-red ml-3 mb-6">john doe - sophomore student</h6>
-            <p id="description" class="text-base whitespace-pre-line font-tech text-tech text-left ml-3">Sed id maximus leo. Nunc diam mi, tempus sed nibh vel, fringilla sagittis justo. Pellentesque varius dui eu magna accumsan dapibus. Proin enim erat, aliquam non leo vitae, elementum rutrum nulla. Duis a odio feugiat, suscipit purus sit amet, auctor erat. 
+            <h6 id="job_subtitle" class="text-xs font-display text-left text-light-red ml-3 mb-6 fade2">john doe - sophomore student</h6>
+            <p id="description" class="text-base whitespace-pre-line font-tech text-tech text-left ml-3 fade2">Sed id maximus leo. Nunc diam mi, tempus sed nibh vel, fringilla sagittis justo. Pellentesque varius dui eu magna accumsan dapibus. Proin enim erat, aliquam non leo vitae, elementum rutrum nulla. Duis a odio feugiat, suscipit purus sit amet, auctor erat. 
 
             In hac habitasse platea dictumst. Nam pretium nisl sed metus placerat interdum. Aenean imperdiet est lacinia eros lobortis tincidunt. Morbi condimentum mi sed quam feugiat, eget ullamcorper mi pellentesque. Cras nec tellus condimentum, blandit est sit amet, pretium dui.
             </p>
@@ -52,6 +52,8 @@
 
 
 </section>
+
+
 <script is:inline>
 const thumb1 = document.querySelector('#thumbchange1');
 const thumb2 = document.querySelector('#thumbchange2');
@@ -124,4 +126,5 @@ thumb4.addEventListener('click', (e) => {
       subtitle.innerHTML = "Phi Phung - A new gen leader";
       description.innerHTML = "Egestas urna amet platea aliquam aliquam ante urna adipiscing. Pulvinar varius vivamus donec vel cras aliquam dignissim egestas morbi. Orci dictumst morbi elementum varius tempus massa pulvinar.<br/> <br/> Luctus elit adipiscing vel purus nisl sit. Nunc morbi nunc nisl augue diam convallis aliquam. Bibendum nec morbi dui sit ipsum lorem enim. Eget eu sit amet interdum sed donec enim. Vulputate pharetra a imperdiet consequat faucibus elementum. Nulla eleifend feugiat lorem nulla. Condimentum proin nec tortor donec. At ipsum maecenas suscipit quisque et."
     });
+
 </script>

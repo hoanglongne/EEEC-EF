@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import HeroSection from '../components/HeroSection.astro';
+import About from '../components/About.astro';
+import '../global.css'
 ---
 
 <Layout title="We are EEEC">
@@ -10,8 +12,11 @@ import HeroSection from '../components/HeroSection.astro';
 	<body>
 
 	<!-- Hero Section here -->
-	<HeroSection />
-	
+		<HeroSection />
+		<div class="about-section">
+		<About />
+		</div>
+
 	
 	<script>
   		if (window.netlifyIdentity) {
@@ -24,11 +29,55 @@ import HeroSection from '../components/HeroSection.astro';
    	 });
  	 }
    </script>
-	</body>
+</body>
 </Layout>
 
 <style>
 
+body {
+	background-image: url("/src/images/v904-nunny-012-min.jpg");
+	height: 101vh;
+	width: 100vw;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.about-section {
+	background-image: url("/src/images/about_background.png");
+	width: 100vw;
+	height:2607px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
 </style>
 
 
+<script is:inline>
+
+function magicEffect(before, after) {
+    //remember to add . before the before element, and always put them in a string
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add(after);
+            } else{
+                entry.target.classList.remove(after);
+            }
+        })
+    });
+    
+    
+    const hiddenElements = document.querySelectorAll(before);
+    hiddenElements.forEach((el) => observer.observe(el));
+    
+    }
+
+magicEffect('.fade1', 'show1')
+magicEffect('.fade2', 'show2')
+
+
+</script>
