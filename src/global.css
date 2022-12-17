@@ -23,3 +23,123 @@
     filter: blur(0);
     transform: translateX(0);
 }
+
+.fade3 {
+    opacity: 0;
+    filter: blur(5);
+    transition: all 1s ease;
+    transform: translateX(100%);
+}
+
+.show3 {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.bump {
+    opacity: 0;
+    filter:blur(10);
+    transform: scale(0)
+}
+.bumpafter {
+    opacity: 1;
+    filter:blur(0);
+    transform: scale(1);
+    transition: all 1s ease;
+}
+
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(0)
+    }
+    10% {
+        transform: rotate(4deg)
+    }
+    20% {
+        transform: rotate(-4deg)
+    }
+    30% {
+        transform: rotate(4deg)
+    }
+    40% {
+        transform: rotate(-4deg)
+    }
+    50% {
+        transform: rotate(4deg)
+    }
+    60%{
+        transform: rotate(-4deg)
+    }
+    80% {
+        transform: rotate(2deg)
+    }
+    90% {
+        transform: rotate(-2deg)
+    }
+    100% {
+        transform: rotate(0)
+    }
+  }
+
+.solar-system {
+    transform: scale(0.5);
+    transition: all 1s ease;
+}
+.solar-system-change {
+    animation: 20s ease-in-out 800ms wiggle;
+    transform: scale(1);
+}
+
+@keyframes faded {
+    0% {
+        fill: #3C4592;
+        transform: translateX(10%);
+    }
+    10% {
+        fill:#5c67c2;
+        transform: translateX(0);
+    }
+    20% {
+        fill:#232b75;
+        transform: translateX(10%);
+    }
+    30% {
+        fill:#5860a5;
+        transform: translateX(0);
+    }
+    40% {
+        fill:#3441b1;
+        transform: translateX(10%);
+    }
+    50% {
+        fill:#5965d3;
+        transform: translateX(0);
+    }
+    60% {
+        fill:#2a348f;
+        transform: translateX(10%);
+    }
+    70% {
+        fill:rgb(73, 81, 160);
+        transform: translateX(0);
+    }
+    80% {
+        fill:#26308a;
+        transform: translateX(10%);
+    }
+    90% {
+        fill:#4d57aa;
+        transform: translateX(0);
+    }
+    100% {
+        fill: #3C4592;
+        transform: translateX(10%);
+    }
+} 
+
+
+#fading {
+    animation: 14s ease-in-out faded infinite;
+}
