@@ -143,3 +143,18 @@
 #fading {
     animation: 14s ease-in-out faded infinite;
 }
+
+.linking {
+    transition: 1s ease-in-out;
+    transform: scale(0);
+    filter: blur(5);
+}
+
+.linked {
+    transform: scale(1);
+    filter: blur(0)
+}
+
+#node1 {
+    transition: 2s ease-in-out;
+}
