@@ -2,6 +2,8 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: Saying goodbye to a deceitful guy – Toxic productivity
 slug: blog-saying-goodbye-to-a-deceitful-guy-toxic-productivity
+tag: Blog
+minutes: "5"
 date: 2022-12-30T07:24:41.465Z
 thumbnail: https://eeecblogging.files.wordpress.com/2022/07/toxic-productvt-01.jpg?w=3136
 ---

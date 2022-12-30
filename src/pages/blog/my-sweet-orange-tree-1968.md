@@ -2,6 +2,8 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: My Sweet Orange Tree (1968)
 slug: blog-my-sweet-orange-tree
+tag: Blog
+minutes: "4"
 date: 2022-12-30T07:33:19.537Z
 thumbnail: https://m.media-amazon.com/images/I/51H36+B6OSL._AC_SY780_.jpg
 ---

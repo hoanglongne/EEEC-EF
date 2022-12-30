@@ -5,7 +5,6 @@
 	import '../global.css'
 	import NavBar from '../components/NavBar.astro';
 	import News from '../components/News.astro'
-	const allPosts = await Astro.glob("../pages/blog/*.md");
 ---
 
 <Layout title="We are EEEC">
@@ -52,8 +51,6 @@
 			e.preventDefault();
 			news.scrollIntoView({block: "start", behavior: "smooth"})
 		})
-
-		
 		</script>
 	</body>
 </Layout>
