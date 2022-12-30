@@ -2,6 +2,8 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: "Violent Night: a Christmas Miracle"
 slug: blog-violent-night-a-christmas-miracle
+tag: News
+minutes: "6"
 date: 2022-12-30T07:49:49.923Z
 thumbnail: https://eeecblogging.files.wordpress.com/2022/12/violent_2.png
 ---
