@@ -2,6 +2,8 @@
 layout: ../../layouts/BlogPostLayout.astro
 title: In the name of ‘Passion’
 slug: blog-in-the-name-of-passion
+tag: Blog
+minutes: "6"
 date: 2022-12-30T07:29:35.818Z
 thumbnail: https://eeecblogging.files.wordpress.com/2022/08/in-the-name-of-passion.png
 ---
