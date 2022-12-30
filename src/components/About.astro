@@ -128,16 +128,61 @@
             <svg class="relative top-20 -left-32" width="500" height="800" viewBox="0 0 446 525" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M29.8934 158.884C76.9838 216.055 91.5387 272.433 29.8934 362.284C-61.2445 495.12 95.3465 551.11 220.687 513.552C346.027 475.994 412.852 400.8 437.875 320.373C456.951 259.059 454.574 115.958 292.458 34.0683C130.341 -47.821 -78.4105 27.3963 29.8934 158.884Z" fill="white"/>
             </svg>
-            <p class="relative -top-[600px] fade2 text-right -left-36 text-2xl font-tech text-[#00247D] w-[450px] leading-[1.75rem] tracking-[3px] whitespace-pre-line">Lorem ipsum dolor sit amet consectetur. Quam sodales ipsum auctor donec sed tempus viverra ultricies. Cursus rhoncus phasellus praesent lectus porta. Lorem a tellus diam posuere ultricies quisque ornare. Aenean feugiat egestas nisl suspendisse pellentesque. Nulla senectus auctor nec potenti etiam placerat morbi etiam.Nulla senectus auctor nec potenti etiam placerat morbi etiam
+            <p class="relative -top-[600px] -mb-[500px] fade2 text-right -left-36 text-2xl font-tech text-[#00247D] w-[450px] leading-[1.75rem] tracking-[3px] whitespace-pre-line">Lorem ipsum dolor sit amet consectetur. Quam sodales ipsum auctor donec sed tempus viverra ultricies. Cursus rhoncus phasellus praesent lectus porta. Lorem a tellus diam posuere ultricies quisque ornare. Aenean feugiat egestas nisl suspendisse pellentesque. Nulla senectus auctor nec potenti etiam placerat morbi etiam.Nulla senectus auctor nec potenti etiam placerat morbi etiam
             Fringilla vel sed at tincidunt sit enim imperdiet velit. Augue sapien sagittis a purus malesuada tortor sed euismod lorem. Et netus erat hac morbi vitae morbi id cursus ornare. Nulla quis nibh molestie risus tempor tellus fusce enim</p>
         </div>
     </div>
 
-
+    <div>
+        <div class="flex justify-center">
+            <div id="about-end" class="relative">
+                <div class="relative z-0 top-32 right-5 h-[25px] w-[160px] bg-[#BAC1FF]"> </div>
+                <h2 class="relative z-1 mb-20 font-binline text-[28px] text-misty text-center whitespace-pre-line tracking-[4px]">
+                    Click here to see our
+                    projects and activities
+                </h2>
+                <div class="flex justify-center -mt-10 mb-20">
+                    <button id="clickToMove">
+                    <svg width="80" height="120" viewBox="0 0 51 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="movingArrow">
+                            <path id="line1" d="M2 40L25.5 51L48.5 40" stroke="#94abdd" stroke-width="4" stroke-linecap="round"/>
+                            <path id="line2" d="M2 21L25.5 32L48.5 21" stroke="#94abdd" stroke-width="4" stroke-linecap="round"/>
+                            <path id="line3" d="M2 2L25.5 13L48.5 2" stroke="#94abdd" stroke-width="4" stroke-linecap="round"/>
+                        </g>
+                    </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </section>
 
 <style>
+    @keyframes linemove {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(3px);
+            stroke: #7c95ca;
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+
+    #line1 {
+        animation: 1.5s ease-in-out linemove infinite;
+    }
+    #line2 {
+        animation: 1.5s ease-in-out 400ms linemove infinite;
+    }
+    #line3 {
+        animation: 1.5s ease-in-out 800ms linemove infinite;
+    }
+
     #square1 {
         transition: all 2s ease;
     }

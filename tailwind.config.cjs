@@ -5,7 +5,9 @@ module.exports = {
 		fontFamily: {
 			'display': ['Bungee'],
 			'sans': ['Inria Sans'],
-			'tech': ['Share Tech']
+			'tech': ['Share Tech'],
+			'binline': ['Bungee Inline'],
+			'bruno': ['Bruno Ace']
 		},
 		extend: {
 			colors: {
@@ -20,6 +22,7 @@ module.exports = {
 			'palehero2': '#9DA0AF',
 			'palehero3': '#858CCA',
 			'palehero4': '#EBCCAC',
+			'misty': 'rgba(0, 36, 125, 0.63)',
 			},
 			dropShadow: {
 				'pink': '3px 0 0 rgba(231, 103, 103, 0.25)',

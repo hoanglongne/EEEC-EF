@@ -1,133 +1,93 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import HeroSection from '../components/HeroSection.astro';
-import About from '../components/About.astro';
-import '../global.css'
+	import Layout from '../layouts/Layout.astro';
+	import HeroSection from '../components/HeroSection.astro';
+	import About from '../components/About.astro';
+	import '../global.css'
+	import NavBar from '../components/NavBar.astro';
+	import News from '../components/News.astro'
 ---
 
 <Layout title="We are EEEC">
+
 	<head>
-		<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+		<script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+		<link rel="preload" as="image" href="https://i.ibb.co/rb6PQW6/Hero2.png" />
+		<link rel="preload" as="image" href="https://i.ibb.co/XSxh8qR/Hero3.png" />
+		<link rel="preload" as="image" href="https://i.ibb.co/hLR0Zyp/Hero4.png" />
 	</head>
+
 	<body>
 
-	<!-- Hero Section here -->
-		<HeroSection />
-		<div class="about-section">
-		<About />
+		<!-- Hero Section here -->
+		<div class="hero-section">
+			<NavBar />
+			<HeroSection />
 		</div>
 
-	
-	<script>
-  		if (window.netlifyIdentity) {
-    		window.netlifyIdentity.on("init", user => {
-      		if (!user) {
-        		window.netlifyIdentity.on("login", () => {
-          		document.location.href = "/admin/";
-      	  });
-   	   }
-   	 });
- 	 }
-   </script>
-</body>
+		<div class="about-section">
+			<About />
+		</div>
+
+		<div id="news-section">
+			<News />
+		</div>
+		
+		<script>
+
+		if (window.netlifyIdentity) {
+			window.netlifyIdentity.on("init", user => {
+			if (!user) {
+				window.netlifyIdentity.on("login", () => {
+				document.location.href = "/admin/";
+				});
+			}
+			});
+		}
+		
+		const btn = document.getElementById('clickToMove');
+		const news = document.getElementById('news-section')
+		
+		btn.addEventListener('click', (e) => {
+			e.preventDefault();
+			news.scrollIntoView({block: "start", behavior: "smooth"})
+		})
+
+		
+		</script>
+	</body>
 </Layout>
 
-<style>
+<script>
+		import '../js/magicEffect.js'
+		import '../js/numberCount.js'
+</script>
 
-body {
-	background-image: url("/src/images/v904-nunny-012-min.jpg");
-	height: 101vh;
-	width: 100vw;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: relative;
+<style>
+	body {
+    box-sizing: border-box;
 }
+
+.hero-section {
+    background-image: url("/src/images/v904-nunny-012-min.jpg");
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    scroll-snap-align: start;
+}
+
+
 .about-section {
-	background-image: url("/src/images/about_background.png");
-	width: 100vw;
-	/* height:2607px; */
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	position: relative;
+    background-image: url("/src/images/about_background.png");
+    width: 100vw;
+    /* height:2607px; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    scroll-snap-align: start;
+    background-color: #ada6ff
 }
 </style>
-
-
-<script is:inline>
-
-function magicEffectRemove(before, after) {
-    //remember to add . before the before element, and always put them in a string
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if(entry.isIntersecting) {
-                entry.target.classList.add(after);
-            } else{
-                entry.target.classList.remove(after);
-            }
-        })
-    });
-    
-    
-    const hiddenElements = document.querySelectorAll(before);
-    hiddenElements.forEach((el) => observer.observe(el));
-    
-    }
-
-magicEffectRemove('.fade1', 'show1')
-magicEffectRemove('.fade2', 'show2')
-magicEffectRemove('.solar-system', 'solar-system-change')
-
-function magicEffect(before, after) {
-    //remember to add . before the before element, and always put them in a string
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if(entry.isIntersecting) {
-                entry.target.classList.add(after);
-            }
-        })
-    });
-    
-    
-    const hiddenElements = document.querySelectorAll(before);
-    hiddenElements.forEach((el) => observer.observe(el));
-    
-}
-magicEffectRemove('.fade3','show3')
-magicEffectRemove('.bump','bumpafter')
-magicEffectRemove('.linking','linked')
-
-function NumberCount(section, num, interval) {
-	let section_counter = document.querySelector(section);
-	let CounterObserver = new IntersectionObserver(
-	(entries, observer) => {
-		let [entry] = entries;
-		if (!entry.isIntersecting) return;
-		let valueDisplays = document.querySelectorAll(num);
-		valueDisplays.forEach((valueDisplay) => {
-			let startValue = 0;
-			let endValue = parseInt(valueDisplay.getAttribute("data-val"));
-			let duration = Math.floor(interval / endValue);
-			let counter = setInterval(function () {
-				startValue += 1;
-				valueDisplay.textContent = startValue;
-				if (startValue == endValue) {
-					clearInterval(counter);
-			}
-	}, duration);
-	});
-		},
-	{
-		root: null,
-	}
-	);
-	CounterObserver.observe(section_counter);	
-}
-
-NumberCount('#section_counter','.num', 1000)
-NumberCount('#section_counter2','.num2', 3000)
-NumberCount('#section_counter3','.num3', 5000)
-</script>

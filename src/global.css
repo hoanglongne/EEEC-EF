@@ -1,3 +1,12 @@
+@tailwind base;
+
+@layer base {
+    @font-face {
+        font-family: 'Bruno Ace';
+        src: url('fonts/BrunoAce-Regular.woff');
+    }
+}
+
 .fade1 {
     opacity: 0;
     filter: blur(5);
@@ -157,4 +166,26 @@
 
 #node1 {
     transition: 2s ease-in-out;
+}
+
+.hero {
+    /* transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
+    transition: all 1s cubic-bezier(.37,.21,.25,1.39);
+    transform: scale(0);
+    filter:blur(5)
+}
+
+.hero1 {
+    transform: scale(1);
+    transition: all 1s cubic-bezier(.37,.21,.25,1.39);
+    filter:blur(0)
+}
+
+#about-end:hover > .moving-square {
+    transform: scaleX(125%) translateX(180%);
+    background-color: #b2a0e2;
+}
+
+#about-end > div {
+    transition: all 1s ease;
 }
