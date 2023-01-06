@@ -1,0 +1,61 @@
+---
+    import {toggleDateSort}  from "../js/toggleDateSort";
+---
+
+<div class="flex justify-between items-center mb-6">
+    <div class="flex justify-between items-center gap-6">
+        <div class=" flex justify-between items-center rounded-full w-[300px] py-1 pl-5 pr-2 border-black border-[1px] overflow-clip">
+            <input type="search" class="outline-none font-bruno text-[12px] display-none" placeholder="Find something?" />
+            <svg class="inline ml-auto cursor-pointer" width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_314_601)">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8415 4.26524C9.19629 3.588 6.49731 5.01679 5.81314 7.45653C5.12898 9.89628 6.71869 12.4231 9.36387 13.1003C12.0091 13.7776 14.708 12.3488 15.3922 9.90903C16.0764 7.46929 14.4866 4.94248 11.8415 4.26524ZM5.07629 7.26788C5.86572 4.45279 8.97992 2.80419 12.0321 3.58562C15.0842 4.36704 16.9185 7.28259 16.129 10.0977C15.3396 12.9128 12.2254 14.5614 9.17329 13.7799C6.12116 12.9985 4.28687 10.083 5.07629 7.26788Z" fill="#80819B"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.5501 9.43739C13.9711 7.93601 12.9928 6.38105 11.365 5.96429L11.5556 5.28467C13.5904 5.80562 14.8132 7.74932 14.2869 9.62604L13.5501 9.43739Z" fill="#80819B"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.6619 12.8506L16.9395 18.0602L16.2837 18.4074L13.0061 13.1977L13.6619 12.8506Z" fill="#80819B"/>
+                </g>
+                <defs>
+                    <clipPath id="clip0_314_601">
+                        <rect width="18.2548" height="16.9401" fill="white" transform="matrix(0.968753 0.248027 -0.270011 0.962857 5.14001 0)"/>
+                    </clipPath>
+                </defs>
+            </svg>
+        </div>
+        <div class="relative">
+            <span id="dateSort" onclick="toggleDateSort()" class="font-bruno inline-block text-[12px] underline mr-1 cursor-pointer">Sorted by Date</span>
+            <div class="absolute inline" id="arrowDown">
+                <svg class="left-0 inline" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 0.5V9M4 9L7 4.80645M4 9L1 4.80645" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="absolute hidden" id="arrowUp">
+                <svg class="inline left-0" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 9L4 0.5M4 0.5L1 4.69355M4 0.5L7 4.69355" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </div>
+        <div>
+            <span class="font-bruno inline-block text-[12px] underline mr-1 cursor-pointer">Sorted by Author</span>
+            <svg class="inline" width="8" height="10" viewBox="0 0 8 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 0.5V9M4 9L7 4.80645M4 9L1 4.80645" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </div>
+
+    <button class="w-[150px] bg-[#11007C] py-3 px-4 rounded-full flex justify-center gap-2 items-center">
+        <p class="font-bruno inline-block text-white text-[10px]">SAVED POSTS</p>
+        <svg class="inline" width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 15L6.5 11.1111L1 15V2.55556C1 2.143 1.16556 1.74733 1.46026 1.45561C1.75496 1.16389 2.15466 1 2.57143 1H10.4286C10.8453 1 11.245 1.16389 11.5397 1.45561C11.8344 1.74733 12 2.143 12 2.55556V15Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+<style>
+#arrowUp {
+ transition: hidden 2s ease-in;
+}
+</style>
+
+<script client:only>
+
+</script>
+
+</div>
+

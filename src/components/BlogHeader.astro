@@ -1,0 +1,56 @@
+---
+const {blogTitle} = Astro.props
+const allPosts = await Astro.glob('../pages/blog/*.md')
+const SortedPosts = allPosts.sort((a , b ) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
+
+const postNum = SortedPosts.findIndex((post, index) => {
+    if(post.frontmatter.title.trim() == blogTitle.trim()) return index > 0 ? index+=1 : index+=2;
+})
+const displayNum = postNum + 1;
+
+const nextUrl = SortedPosts[postNum + 1]?.url
+const prevUrl = SortedPosts[postNum - 1]?.url
+---
+
+
+<div class="bg-white min-h-[60px] font-bruno max-w-[60%] mx-auto mb-12 border-black border-2 rounded-b-[33px] grid grid-cols-8 overflow-clip">   
+        <a href={prevUrl} class="flex justify-center items-center gap-1 pagiBtn col-span-1 border-r-2 border-r-black">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.5 8.7L4.3 6.5M4.3 6.5L6.5 4.3M4.3 6.5L8.7 6.5M1 6.5C1 3.46243 3.46243 1 6.5 1C9.53757 1 12 3.46244 12 6.5C12 9.53757 9.53757 12 6.5 12C3.46243 12 1 9.53757 1 6.5Z" stroke="black" stroke-width="1"/>
+            </svg>
+            <p class="text-[12px] text-black">PREV.</p>
+        </a>
+    <div class="col-span-6 flex justify-center items-center gap-4">
+        <h2 class=" text-[14px text-black">
+            BLOG POST - <span>{displayNum}/{allPosts.length}</span>
+        </h2>
+    </div>
+    
+        <a href={nextUrl} class="border-l-2 border-l-black flex col-span-1 justify-center items-center gap-1 pagiBtn">
+            <p class="text-[12px] text-black">NEXT</p>
+
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.5 4.3L8.7 6.5M8.7 6.5L6.5 8.7M8.7 6.5H4.3M12 6.5C12 9.53757 9.53757 12 6.5 12C3.46243 12 1 9.53757 1 6.5C1 3.46243 3.46243 1 6.5 1C9.53757 1 12 3.46243 12 6.5Z" stroke="black" stroke-width="1"/>
+            </svg>
+        </a>
+</div>
+
+
+<style>
+
+.pagiBtn {
+    cursor: pointer;
+}
+
+.pagiBtn > p, .pagiBtn > svg > path {
+    transition: all 300ms ease-in-out
+}
+
+.pagiBtn:hover > p {
+    color: #AD4B4B;
+}
+.pagiBtn:hover > svg > path {
+    stroke: #AD4B4B;
+}
+
+</style>

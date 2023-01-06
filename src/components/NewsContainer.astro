@@ -1,5 +1,9 @@
-<section class="max-w-[84%] ml-auto mr-auto pb-20 relative z-10">
-    <div class="w-full bg-white py-8 px-10 rounded-xl border-black border-2">
+---
+    const {containerPadding, maxW} = Astro.props
+---
+
+<section class={`${maxW} ml-auto mr-auto pb-10 relative z-10`}>
+    <div class={`w-full bg-white py-8 ${containerPadding} rounded-xl border-black border-2 overflow-clip`}>
         <slot />
-    </div>
+    </div> 
 </section>

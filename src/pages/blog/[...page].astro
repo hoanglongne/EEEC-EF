@@ -1,0 +1,88 @@
+---
+import NavBar from "../../components/NavBar.astro";
+import NewsBlock from "../../components/NewsBlock.astro";
+import NewsContainer from "../../components/NewsContainer.astro";
+import Layout from "../../layouts/Layout.astro";
+import '../../global.css'
+import Pagination from "../../components/Pagination.astro";
+import NewsTools from "../../components/NewsTools.astro";
+
+export async function getStaticPaths({paginate}) {
+	let allPosts = await Astro.glob("./*.md");
+	const SortedPosts = allPosts.sort((a , b ) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
+  	return paginate(allPosts, { pageSize: 2 });
+}
+
+const {page} = Astro.props;
+---
+
+<Layout title="We are EEEC">
+
+	<head>
+		<script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+	</head>
+
+	<body class="font-bruno">
+
+		<NavBar aboutLink="/#about-section" newsLink='/blog/' />		
+		<div>
+			<h1 class="text-center font-bruno z-10 text-[40px] tracking-[12px] mt-5 mb-10 pl-12">News & Blog</h1>
+			<div class="absolute top-20 left-5">
+				<svg id="green-particle" class="relative z-0" width="454" height="472" viewBox="0 0 454 472" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M113.413 465.448C265.151 494.864 383.851 400.86 424.234 350.181L453.452 188.371C410.981 -101.619 151.825 2.08159 221.437 119.851C288.074 232.586 146.91 285.599 56.724 306.021C-16.9243 326.19 -38.3255 436.031 113.413 465.448Z" fill="#E0E9E5" fill-opacity="0.69"/>
+				</svg>
+			</div>
+			<div class="absolute top-36 right-8">
+				<svg id="blue-particle" width="615" height="519" viewBox="0 0 615 519" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M208.471 24.8506C311 -58.9075 529.705 87.8997 587.587 264.41C613.594 343.719 639.859 463.534 565.071 490.117C251.862 601.447 -132.788 346.549 47.2262 212.416C122.475 156.346 128.246 146.593 128.246 127.592C128.246 94.0925 105.942 108.609 208.471 24.8506Z" fill="#F5F4FF" stroke="black"/>
+				</svg>
+			</div>
+		</div>
+
+		<NewsContainer maxW="max-w-[84%]" containerPadding="px-10">
+			<NewsTools />
+			{page.data.map((post: { frontmatter: { title: any; tag: any; minutes: any; thumbnail: any; date: string | any[]; }; rawContent: () => string | any[]; url: any; })=> (
+				<NewsBlock title={post.frontmatter.title} 
+				tag={post.frontmatter.tag} 
+				minutes={post.frontmatter.minutes} 
+				thumbnail={post.frontmatter.thumbnail} 
+				date={post.frontmatter.date.slice(0,10)}
+				content={post.rawContent().slice(0,300)}
+				url={post.url}
+				/>
+			))}
+
+
+			<Pagination page={page}  client:load/>
+
+		</NewsContainer>
+
+
+		<script>
+
+		if (window.netlifyIdentity) {
+			window.netlifyIdentity.on("init", user => {
+			if (!user) {
+				window.netlifyIdentity.on("login", () => {
+				document.location.href = "/admin/";
+				});
+			}
+			});
+		}
+		</script>
+	</body>
+</Layout>
+
+<style>
+body {
+    background-color: #FCF6ED;
+}
+
+#green-particle {
+	animation: 16s ease-in-out wiggle infinite;
+}
+#blue-particle {
+	animation: 34s linear wiggle infinite;
+}
+
+</style>

@@ -1,11 +1,52 @@
 ---
+import NewsContainer from "../components/NewsContainer.astro";
 import Layout from "./Layout.astro";
-const {frontmatter} = Astro.props
+import BlogHeader from "../components/BlogHeader.astro";
+const {frontmatter} = Astro.props;
+import '../global.css'
 ---
 
 <Layout title={frontmatter.title}>
-  <p>{frontmatter.date.slice(0, 10)}</p>
-  <p>Written by: someone</p>
-  <img src={frontmatter.thumbnail} width="400" />
-  <slot />
+  <main>
+    <BlogHeader blogTitle={frontmatter.title} />
+
+    <NewsContainer maxW="max-w-[70%]" containerPadding="px-0" >
+
+        <div class="w-full flex justify-center items-center px-32 mb-10 mt-6">
+            <h1 class="font-binline text-4xl inline-block text-center text-[#888BC0] leading-16 tracking-[3px]">{frontmatter.title.toUpperCase()}</h1>
+        </div>
+        
+        <div class="px-[8%] pb-4 underline-offset-2 underline">
+          <h3 class="font-bruno">
+            Published {frontmatter.date.slice(0,10)}
+          </h3>
+        </div>
+        
+        <div class="rounded-2xl overflow-clip max-w-[86%] mx-auto flex justify-center items-start max-h-[600px]">
+            <img src={frontmatter.thumbnail} />
+        </div>
+        
+        <div id="slot-container">
+          <slot />
+        </div>
+    
+    </NewsContainer>
+  </main>
 </Layout>
+
+<style>
+main {
+margin-top: -5px;
+background-color: #FCF6ED;
+}
+
+#slot-container {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 12%;
+  font-size: 22px;
+  line-height: 2.5rem;
+  margin-top: -80px;
+  margin-bottom: -80px;
+}
+
+</style>
