@@ -1,5 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
+authorName: Phi Phung
+authorAvatar: /assets/rectangle-100.png
 title: My Sweet Orange Tree (1968)
 slug: blog-my-sweet-orange-tree
 tag: Blog
