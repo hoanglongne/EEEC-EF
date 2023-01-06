@@ -1,5 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
+authorName: Jamie Varth
+authorAvatar: /assets/rectangle-101.png
 title: Saying goodbye to a deceitful guy – Toxic productivity
 slug: blog-saying-goodbye-to-a-deceitful-guy-toxic-productivity
 tag: Blog
