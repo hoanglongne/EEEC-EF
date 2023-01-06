@@ -1,5 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
+authorName: Phi Phung
+authorAvatar: /assets/rectangle-100.png
 title: In the name of ‘Passion’
 slug: blog-in-the-name-of-passion
 tag: Blog
