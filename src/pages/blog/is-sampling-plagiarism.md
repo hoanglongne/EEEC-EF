@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 authorName: John Doe
-authorAvatar: https://i.ibb.co/f9PBvNJ/Rectangle-103.png
+authorAvatar: https://res.cloudinary.com/hoanglongne/image/upload/v1673108185/Rectangle_103_lk2lkp.png
 title: Is sampling plagiarism?
 slug: blog-is-sampling-plagiarism
 tag: Blog
