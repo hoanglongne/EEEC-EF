@@ -24,10 +24,10 @@ collections:
     - {label: "Featured Image", name: "thumbnail", widget: "image", hint: "Có thể copy link ảnh hoặc upload ảnh lên database, ưu tiên phương án thứ nhất hơn"}
     - {label: "Body", name: "body", widget: "markdown"}
 - name: "author"
-- label: "Author"
-- folder: "src/pages/blog/author"
-- create: true
-- slug: "{{name}}"
-- fields:
+  label: "Author"
+  folder: "src/pages/blog/author"
+  create: true
+  slug: "{{name}}"
+  fields:
     - {label: "Name", name: "name", widget: "string"}
     - {label: "Avatar", name: "avatar", widget: "image"}
