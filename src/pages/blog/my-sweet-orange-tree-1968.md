@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 authorName: Phi Phung
-authorAvatar: https://i.ibb.co/ckcypxH/Rectangle-100.png
+authorAvatar: https://res.cloudinary.com/hoanglongne/image/upload/v1673108184/Rectangle_100_cyaiiq.png
 title: My Sweet Orange Tree (1968)
 slug: blog-my-sweet-orange-tree
 tag: Blog
