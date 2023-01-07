@@ -1,3 +1,8 @@
+---
+import heroImage1 from '../images/hero-image1.png'
+---
+
+
 <section class="grid gap-6 grid-cols-3 text-center mt-28 px-24">
     <div>
         <h1 class="font-sans text-5xl fade1 text-left whitespace-pre-line text-main-blue drop-shadow-pink">BRING THE 
@@ -15,7 +20,7 @@
     </div>
     
     <div class="pb-20">
-        <img src="https://i.ibb.co/1Ky9Tpd/Group-114.png" id="hero" alt="bigHero1" class="object-cover h-[500px] -mt-16 hero">
+        <img src={heroImage1} id="hero" alt="bigHero1" class="object-cover h-[500px] -mt-16 hero">
         <div class="flex mt-4 gap-6 ml-20">
             <a><img id="thumbchange1" class="object w-12 hover:translate-y-2 ease-in duration-100" src="https://i.ibb.co/p3SGJww/thumb1.png"  alt="thumb1"></a>
             <a><img id="thumbchange2" class="object w-12 hover:translate-y-2 ease-in duration-100" src="https://i.ibb.co/Mkzqhwn/thumb2.png" alt="thumb2"/></a>
@@ -51,22 +56,11 @@
 
 
 </section>
-<style>
-#blogButton-ring, #blogButton-triangle {
-    transition: 400ms ease-in;
-}
-#blogButton-triangle:hover ~ #blogButton-ring {
-    transform: rotate(30deg);
-}
-#blogButton-ring:hover {
-    transform: rotate(30deg);
-}
-#blogButton-ring:hover ~ #blogButton-triangle, #blogButton-triangle:hover {
-    transform: scale(120%);
-}
-</style>
-
-<script is:inline>
+<script>
+import heroImage1 from '../images/hero-image1.png'
+import heroImage2 from '../images/hero-image2.png'
+import heroImage3 from '../images/hero-image3.png'
+import heroImage4 from '../images/hero-image4.png'
 const thumb1 = document.querySelector('#thumbchange1');
 const thumb2 = document.querySelector('#thumbchange2');
 const thumb3 = document.querySelector('#thumbchange3');
@@ -78,7 +72,7 @@ const description = document.querySelector('#description')
 
 
 thumb1.addEventListener('click', (e) => {
-      hero.src = "https://i.ibb.co/1Ky9Tpd/Group-114.pngg"
+      hero.src = heroImage1
       title.classList?.remove('text-hero2')
       title.classList?.remove('text-hero3')
       title.classList?.remove('text-hero4')
@@ -94,7 +88,7 @@ thumb1.addEventListener('click', (e) => {
 
 thumb2.addEventListener('click', (e) => {
       e.preventDefault();
-      hero.src = "https://i.ibb.co/rb6PQW6/Hero2.png"
+      hero.src = heroImage2
       title.classList?.remove('text-red')
       title.classList?.remove('text-hero3')
       title.classList?.remove('text-hero4')
@@ -109,7 +103,7 @@ thumb2.addEventListener('click', (e) => {
     });
 thumb3.addEventListener('click', (e) => {
       e.preventDefault();
-      hero.src = "https://i.ibb.co/XSxh8qR/Hero3.png"
+      hero.src = heroImage3
       hero.classList.toggle('hero1')
       hero.classList.toggle('hero1')
       title.classList?.remove('text-red')
@@ -126,7 +120,7 @@ thumb3.addEventListener('click', (e) => {
     });
 thumb4.addEventListener('click', (e) => {
       e.preventDefault();
-      hero.src = "https://i.ibb.co/hLR0Zyp/Hero4.png"
+      hero.src = heroImage4
       title.classList?.remove('text-red')
       title.classList?.remove('text-hero2')
       title.classList?.remove('text-hero3')
@@ -141,4 +135,19 @@ thumb4.addEventListener('click', (e) => {
     });
 
 </script>
+<style>
+#blogButton-ring, #blogButton-triangle {
+    transition: 400ms ease-in;
+}
+#blogButton-triangle:hover ~ #blogButton-ring {
+    transform: rotate(30deg);
+}
+#blogButton-ring:hover {
+    transform: rotate(30deg);
+}
+#blogButton-ring:hover ~ #blogButton-triangle, #blogButton-triangle:hover {
+    transform: scale(120%);
+}
+</style>
+
 

@@ -7,7 +7,7 @@ media_folder: "src/assets" # Media files will be stored in the repo under static
 public_folder: "/assets" # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
-  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+  - name: "blog" # Used in routes, e.g., /admin/collections/blogs
     label: "Blog" # Used in the UI
     folder: "src/pages/blog" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
@@ -15,7 +15,7 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogPostLayout.astro"}
       - {label: "Author Name", name: "authorName", widget: "string", hint: "Điền bút danh của bạn vào đây nha"}
-      - {label: "Author Avatar", name: "authorAvatar", widget: "image", hint: "Lựa hình ảnh trong kho có sẵn nha"}
+      - {label: "Author Avatar", name: "authorAvatar", widget: "image"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Slug", name: "slug", widget: "string", hint: "Dùng để tạo được dẫn cho bài viết, cần phải unique. Lấy tên của của bài blog, biến các chữ cái in hoa thành viết thường rồi cho dấu - vào giữa các chữ, ví dụ: blog-who-we-are"}
       - {label: "Tag", name: "tag", widget: "select", options: ["Blog", "News"]}

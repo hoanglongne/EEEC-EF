@@ -4,6 +4,9 @@ import Layout from "./Layout.astro";
 import BlogHeader from "../components/BlogHeader.astro";
 const {frontmatter} = Astro.props;
 import '../global.css'
+import image1 from '../images/firstthumbimg.png'
+
+// const AuthorImg = await import(`../../dist${frontmatter.authorAvatar.slice(0,21)}.png`).then((response) => response.default)
 ---
 
 <Layout title={frontmatter.title}>
@@ -15,10 +18,15 @@ import '../global.css'
         <div class="w-full flex justify-center items-center px-32 mb-10 mt-6">
             <h1 class="font-binline text-4xl inline-block text-center text-[#888BC0] leading-16 tracking-[3px]">{frontmatter.title.toUpperCase()}</h1>
         </div>
+        <!-- <img src={AuthorImg} is:raw alt=""> -->
+
+        <!-- {console.log(AuthorImg)} -->
         
         <div class="px-[8%] pb-4 underline-offset-2 underline">
           <h3 class="font-bruno">
             Published {frontmatter.date.slice(0,10)}
+            <img src={image1} alt="">
+            <!-- {console.log(image1)} -->
           </h3>
         </div>
         
@@ -29,7 +37,6 @@ import '../global.css'
         <div id="slot-container">
           <slot />
         </div>
-    
     </NewsContainer>
   </main>
 </Layout>
