@@ -14,7 +14,7 @@ collections:
   slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
   fields: # The fields for each document, usually in front matter
     - {label: "Layout", name: "layout", widget: "hidden", default: "../../layouts/BlogPostLayout.astro"}
-    - {label: "Author Name", name: "authorName", widget: "string", hint: "Điền bút danh của bạn vào đây nha"}
+    - {label: "Author Name", name: "authorName", widget: "relation", collection: "author", search_fields: ["name"], display_fields: ["name"], value_field: "name", hint: "Điền bút danh của bạn vào đây nha"}
     - {label: "Author Avatar", name: "authorAvatar", widget: "image"}
     - {label: "Title", name: "title", widget: "string"}
     - {label: "Slug", name: "slug", widget: "string", hint: "Dùng để tạo được dẫn cho bài viết, cần phải unique. Lấy tên của của bài blog, biến các chữ cái in hoa thành viết thường rồi cho dấu - vào giữa các chữ, ví dụ: blog-who-we-are"}
