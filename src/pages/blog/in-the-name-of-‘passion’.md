@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 authorName: Phi Phung
-authorAvatar: https://i.ibb.co/ckcypxH/Rectangle-100.png
+authorAvatar: https://res.cloudinary.com/hoanglongne/image/upload/v1673108184/Rectangle_100_cyaiiq.png
 title: In the name of ‘Passion’
 slug: blog-in-the-name-of-passion
 tag: Blog
