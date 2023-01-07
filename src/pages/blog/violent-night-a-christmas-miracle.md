@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 authorName: David Moore
-authorAvatar: /assets/rectangle-102.png
+authorAvatar: https://i.ibb.co/0rrrsfW/Rectangle-102.png
 title: "Violent Night: a Christmas Miracle"
 slug: blog-violent-night-a-christmas-miracle
 tag: News
