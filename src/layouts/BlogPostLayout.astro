@@ -10,8 +10,8 @@ const postNum = SortedPosts.findIndex((post, index) => {
 })
 const displayNum = postNum + 1;
 
-const nextUrl = SortedPosts[postNum + 1]?.url
-const prevUrl = SortedPosts[postNum - 1]?.url
+const nextUrl = SortedPosts[postNum + 1]?.url.toString()
+const prevUrl = SortedPosts[postNum - 1]?.url.toString()
 import '../global.css'
 ---
 
@@ -21,7 +21,10 @@ import '../global.css'
   <main id="mainBody">
     
     <BlogHeader displayNum={displayNum} prevUrl={prevUrl} nextUrl={nextUrl} postsNumber={allPosts.length} />
-
+    {allPosts.map((post) => {
+      console.log(post.url)
+    })}
+    {console.log(nextUrl)}
     <NewsContainer maxW="max-w-[70%]" containerPadding="px-0" >
 
         <div class="w-full flex justify-center items-center px-20 mb-10 mt-6">
@@ -60,12 +63,20 @@ import '../global.css'
     constructor() {
       super();
       console.log(this.dataset)
-        document.getElementById('mainBody').addEventListener("keydown", (e) => {
-          console.log(this.dataset)
+      const mainBody = document.querySelector('#mainBody')
+      document.addEventListener("keyup", (e) => {
           if (e.key == "ArrowLeft") {
-            window.location.replace = this.dataset.prevUrl;
+            if (this.dataset.prevurl) {
+              window.location.href = this.dataset.prevurl;
+            } else {
+              window.alert('Sorry, this is the newest blog')
+            }
           } else if (e.key == "ArrowRight") {
-            window.location.replace = this.dataset.nextUrl;
+            if (this.dataset.nexturl) {
+            window.location.href = this.dataset.nexturl;
+            } else {
+              window.alert('Sorry, this is the last blog')
+            }
           }
         })
       }
