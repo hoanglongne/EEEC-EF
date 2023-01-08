@@ -14,24 +14,31 @@ import '../global.css'
 
     <NewsContainer maxW="max-w-[70%]" containerPadding="px-0" >
 
-        <div class="w-full flex justify-center items-center px-32 mb-10 mt-6">
-            <h1 class="font-binline text-4xl inline-block text-center text-[#888BC0] leading-16 tracking-[3px]">{frontmatter.title.toUpperCase()}</h1>
+        <div class="w-full flex justify-center items-center px-20 mb-10 mt-6">
+            <h1 class="font-bruno text-3xl inline-block text-center text-[#922B56] leading-16 tracking-[3px]">{frontmatter.title.toUpperCase()}</h1>
         </div>
         
-        <div class="rounded-2xl overflow-clip max-w-[86%] mx-auto flex justify-center items-start max-h-[600px]">
-            <img src={frontmatter.thumbnail} />
+        <div class="rounded-2xl overflow-clip max-w-[86%] mx-auto flex justify-center bg-[#a5e9fd33] items-start  max-h-[550px] drop-shadow-[0_2px_3px_rgba(0,0,0,0.3)">
+            <img class="max-h-[800px]" src={frontmatter.thumbnail} />
         </div>
 
-        <div class="max-w-[80px]">
-          <img src={frontmatter.authorAvatar} alt=""/>
+        <div class="px-[12%] pt-10 flex flex-row justify-start items-center">
+          <div class="w-[80px] h-[80px] rounded-full overflow-clip flex items-center border-[#606060] border-[2px]">
+            <img class="w-[90px] h-[80px]" src={frontmatter.authorAvatar} alt=""/>
+          </div>
+          <div class="pl-4 flex flex-col justify-center gap-2">
+            <h3 class="font-bruno text-[#606060] text-[14px]">
+              Published {frontmatter.date.slice(0,10)}
+            </h3>
+            <div>
+                <p class="font-bruno text-[#606060] text-[18px]">a post from {frontmatter.authorName}</p>
+            </div>
+          </div>
         </div>
         
-        <div class="px-[8%] pb-4 underline-offset-2 underline">
-          <h3 class="font-bruno">
-            Published {frontmatter.date.slice(0,10)}
-          </h3>
+        <div class="w-[50%] border-gray border-[1px] ml-auto mr-auto mt-10">
         </div>
-        
+
         <div id="slot-container">
           <slot />
         </div>
