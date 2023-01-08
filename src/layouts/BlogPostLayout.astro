@@ -2,15 +2,25 @@
 import NewsContainer from "../components/NewsContainer.astro";
 import Layout from "./Layout.astro";
 import BlogHeader from "../components/BlogHeader.astro";
+const allPosts = await Astro.glob('../pages/blog/*.md')
+const SortedPosts = allPosts.sort((a , b ) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
 const {frontmatter} = Astro.props;
-import '../global.css'
+const postNum = SortedPosts.findIndex((post, index) => {
+    if(post.frontmatter.title.trim() == frontmatter.title.trim()) return index > 0 ? index+=1 : index+=2;
+})
+const displayNum = postNum + 1;
 
-// const AuthorImg = await import(`../../dist${frontmatter.authorAvatar.slice(0,21)}.png`).then((response) => response.default)
+const nextUrl = SortedPosts[postNum + 1]?.url
+const prevUrl = SortedPosts[postNum - 1]?.url
+import '../global.css'
 ---
 
 <Layout title={frontmatter.title}>
-  <main>
-    <BlogHeader blogTitle={frontmatter.title} />
+  <astro-url data-nextUrl={nextUrl} data-prevUrl={prevUrl}>
+  
+  <main id="mainBody">
+    
+    <BlogHeader displayNum={displayNum} prevUrl={prevUrl} nextUrl={nextUrl} postsNumber={allPosts.length} />
 
     <NewsContainer maxW="max-w-[70%]" containerPadding="px-0" >
 
@@ -44,6 +54,24 @@ import '../global.css'
         </div>
     </NewsContainer>
   </main>
+  </astro-url>
+  <script>
+  class AstroUrl extends HTMLElement {
+    constructor() {
+      super();
+      console.log(this.dataset)
+        document.getElementById('mainBody').addEventListener("keydown", (e) => {
+          console.log(this.dataset)
+          if (e.key == "ArrowLeft") {
+            window.location.replace = this.dataset.prevUrl;
+          } else if (e.key == "ArrowRight") {
+            window.location.replace = this.dataset.nextUrl;
+          }
+        })
+      }
+  }
+  customElements.define('astro-url', AstroUrl);
+  </script>
 </Layout>
 
 <style>
