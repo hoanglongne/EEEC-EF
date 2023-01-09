@@ -60,19 +60,19 @@ import '../global.css'
     constructor() {
       super();
       console.log(this.dataset)
-        document.addEventListener("keydown", (e) => {
-          console.log(this.dataset)
+      const mainBody = document.querySelector('#mainBody')
+      document.addEventListener("keyup", (e) => {
           if (e.key == "ArrowLeft") {
             if (this.dataset.prevurl) {
-            window.location.href = this.dataset.prevurl;
+              window.location.href = this.dataset.prevurl;
             } else {
-              window.alert('Sorry, this is the newest post')
+              window.alert('Sorry, this is the newest blog')
             }
           } else if (e.key == "ArrowRight") {
             if (this.dataset.nexturl) {
-              window.location.href = this.dataset.nexturl;
+            window.location.href = this.dataset.nexturl;
             } else {
-              window.alert('Sorry, this is the oldest post')
+              window.alert('Sorry, this is the last blog')
             }
           }
         })
