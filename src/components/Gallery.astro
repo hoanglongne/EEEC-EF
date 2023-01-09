@@ -1,0 +1,55 @@
+---
+import image1 from '../images/image1.png'
+import image2 from '../images/image2.png'
+import image3 from '../images/image3.png'
+import image4 from '../images/image4.png'
+import image5 from '../images/image5.png'
+import image6 from '../images/image6.png'
+import image7 from '../images/image7.png'
+import image8 from '../images/image8.png'
+---
+<section class="w-[100vw] h-[100vh] relative">
+    <div class="absolute top-0 z-10 bg-[#FBFBFB29] w-full h-full"></div>
+    <div class="absolute top-0 z-20 bg-[#393D3E8C] w-full h-full galleryNotFade">
+        <div class="h-full flex justify-center items-center">
+            <h1 class="text-white mx-auto text-5xl font-binline tracking-[4px]">ACTIVITIES GALLERY</h1>
+        </div>
+    </div>
+    <div class="max-h-full absolute top-0 z-0 grid grid-rows-3 grid-cols-6 gap-2">
+        <div class="col-span-2 row-span-1">
+            <img class="h-full w-full" src={image1} alt="">
+        </div>
+        <div class="col-span-2 row-span-1">
+            <img class="h-full w-full" src={image2} alt="">
+        </div>
+        <div class="col-span-2 row-span-1">
+            <img class="h-full w-full" src={image3} alt="">
+        </div>
+        <div class="col-span-1 row-span-2">
+            <img class="h-full w-full" src={image4} alt="">
+        </div>
+        <div class="col-span-2 row-span-1">
+            <img class="h-full w-full" src={image5} alt="">
+        </div>
+        <div class="col-span-3 row-span-1">
+            <img class="h-full w-full" src={image6} alt="">
+        </div>
+        <div class="col-span-3 row-span-1">
+            <img class="h-full w-full" src={image7} alt="">
+        </div>
+        <div class="col-span-2 row-span-1">
+            <img class="h-full w-full" src={image8} alt="">
+        </div>
+    </div>
+
+    <script>
+    import '../js/magicEffect.js'
+    const btn = document.getElementById('clickToMove');
+		const news = document.getElementById('gallery-section')
+		
+		btn.addEventListener('click', (e) => {
+			e.preventDefault();
+			news.scrollIntoView({block: "start", behavior: "smooth"})
+		})
+    </script>
+</section>

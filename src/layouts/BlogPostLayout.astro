@@ -60,12 +60,20 @@ import '../global.css'
     constructor() {
       super();
       console.log(this.dataset)
-        document.getElementById('mainBody').addEventListener("keydown", (e) => {
+        document.addEventListener("keydown", (e) => {
           console.log(this.dataset)
           if (e.key == "ArrowLeft") {
-            window.location.replace = this.dataset.prevUrl;
+            if (this.dataset.prevurl) {
+            window.location.href = this.dataset.prevurl;
+            } else {
+              window.alert('Sorry, this is the newest post')
+            }
           } else if (e.key == "ArrowRight") {
-            window.location.replace = this.dataset.nextUrl;
+            if (this.dataset.nexturl) {
+              window.location.href = this.dataset.nexturl;
+            } else {
+              window.alert('Sorry, this is the oldest post')
+            }
           }
         })
       }

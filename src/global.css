@@ -189,3 +189,15 @@
 #about-end > div {
     transition: all 1s ease;
 }
+
+
+.galleryNotFade {
+    transition: all 700ms ease-out ;
+}
+
+.galleryFade {
+    transition-delay: 2s;
+    transform: scale(300%);
+    opacity: 0;
+    visibility: hidden;
+}

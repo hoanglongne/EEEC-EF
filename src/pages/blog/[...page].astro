@@ -4,19 +4,19 @@ import NewsBlock from "../../components/NewsBlock.astro";
 import NewsContainer from "../../components/NewsContainer.astro";
 import Layout from "../../layouts/Layout.astro";
 import '../../global.css'
-import Pagination from "../../components/Pagination.astro";
+import Pagination from "../../components/Pagination.jsx";
 import NewsTools from "../../components/NewsTools.astro";
 
 export async function getStaticPaths({paginate}) {
 	let allPosts = await Astro.glob("./*.md");
 	const SortedPosts = allPosts.sort((a , b ) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
-  	return paginate(allPosts, { pageSize: 2 });
+  	return paginate(SortedPosts, { pageSize: 2 });
 }
 
 const {page} = Astro.props;
 ---
 
-<Layout title="We are EEEC">
+<Layout title="EEEC Blog">
 
 	<head>
 		<script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -52,13 +52,13 @@ const {page} = Astro.props;
 				/>
 			))}
 
-
 			<Pagination page={page}  client:load/>
 
 		</NewsContainer>
 
 
 		<script>
+		
 
 		if (window.netlifyIdentity) {
 			window.netlifyIdentity.on("init", user => {
