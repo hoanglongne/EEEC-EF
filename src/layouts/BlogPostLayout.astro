@@ -58,24 +58,24 @@ import '../global.css'
     </NewsContainer>
   </main>
   </astro-url>
-  <script>
+    <script>
   class AstroUrl extends HTMLElement {
     constructor() {
       super();
       console.log(this.dataset)
-      const mainBody = document.querySelector('#mainBody')
-      document.addEventListener("keyup", (e) => {
+        document.addEventListener("keydown", (e) => {
+          console.log(this.dataset)
           if (e.key == "ArrowLeft") {
             if (this.dataset.prevurl) {
-              window.location.href = this.dataset.prevurl;
+            window.location.href = this.dataset.prevurl;
             } else {
-              window.alert('Sorry, this is the newest blog')
+              window.alert('Sorry, this is the newest post')
             }
           } else if (e.key == "ArrowRight") {
             if (this.dataset.nexturl) {
-            window.location.href = this.dataset.nexturl;
+              window.location.href = this.dataset.nexturl;
             } else {
-              window.alert('Sorry, this is the last blog')
+              window.alert('Sorry, this is the oldest post')
             }
           }
         })
