@@ -64,7 +64,6 @@ import '../global.css'
       super();
       console.log(this.dataset)
         document.addEventListener("keydown", (e) => {
-          console.log(this.dataset)
           if (e.key == "ArrowLeft") {
             if (this.dataset.prevurl) {
             window.location.href = this.dataset.prevurl;

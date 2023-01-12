@@ -7,49 +7,81 @@ import image5 from '../images/image5.png'
 import image6 from '../images/image6.png'
 import image7 from '../images/image7.png'
 import image8 from '../images/image8.png'
+import Modal from './Modal.astro'
+let allPosts = await Astro.glob("../pages/activities/*.md");
 ---
 <section class="w-[100vw] h-[100vh] relative">
-    <div class="absolute top-0 z-10 bg-[#FBFBFB29] w-full h-full"></div>
+    <div class="absolute top-0 z-10 bg-[#FBFBFB29] w-full h-full pointer-events-none">
+        {
+        allPosts.map((post) => (
+            <Modal title={post.frontmatter.title} 
+            mid={post.frontmatter.mid} 
+            image={post.frontmatter.image} 
+            time={post.frontmatter.time}   
+            place={post.frontmatter.place} 
+            partners={post.frontmatter.partners} 
+            description={post.rawContent()}
+            color={post.frontmatter.color}
+            />
+        ))
+        }
+    </div>
     <div class="absolute top-0 z-20 bg-[#393D3E8C] w-full h-full galleryNotFade">
         <div class="h-full flex justify-center items-center">
             <h1 class="text-white mx-auto text-5xl font-binline tracking-[4px]">ACTIVITIES GALLERY</h1>
         </div>
     </div>
     <div class="max-h-full absolute top-0 z-0 grid grid-rows-3 grid-cols-6 gap-2">
-        <div class="col-span-2 row-span-1">
+        <div data-modal="p01" class="thumbImageContainer col-span-2 row-span-1 cursor-pointer">
             <img class="h-full w-full" src={image1} alt="">
         </div>
-        <div class="col-span-2 row-span-1">
+        <div data-modal="p02" class="thumbImageContainer col-span-2 row-span-1 cursor-pointer">
             <img class="h-full w-full" src={image2} alt="">
         </div>
-        <div class="col-span-2 row-span-1">
+        <div data-modal="p03" class="thumbImageContainer col-span-2 row-span-1 cursor-pointer">
             <img class="h-full w-full" src={image3} alt="">
         </div>
-        <div class="col-span-1 row-span-2">
+        <div data-modal="p04" class="thumbImageContainer col-span-1 row-span-2 cursor-pointer">
             <img class="h-full w-full" src={image4} alt="">
         </div>
-        <div class="col-span-2 row-span-1">
+        <div data-modal="p05" class="thumbImageContainer col-span-2 row-span-1 cursor-pointer">
             <img class="h-full w-full" src={image5} alt="">
         </div>
-        <div class="col-span-3 row-span-1">
+        <div data-modal="p06" class="thumbImageContainer col-span-3 row-span-1 cursor-pointer">
             <img class="h-full w-full" src={image6} alt="">
         </div>
-        <div class="col-span-3 row-span-1">
+        <div data-modal="p07" class="thumbImageContainer col-span-3 row-span-1 cursor-pointer">
             <img class="h-full w-full" src={image7} alt="">
         </div>
-        <div class="col-span-2 row-span-1">
+        <div data-modal="p08" class="thumbImageContainer col-span-2 row-span-1 cursor-pointer">
             <img class="h-full w-full" src={image8} alt="">
         </div>
     </div>
 
     <script>
     import '../js/magicEffect.js'
-    const btn = document.getElementById('clickToMove');
-		const news = document.getElementById('gallery-section')
+    import '../js/modalOpen.js'
+    // const btn = document.getElementById('clickToMove');
+	// 	const news = document.getElementById('gallery-section')
 		
-		btn.addEventListener('click', (e) => {
-			e.preventDefault();
-			news.scrollIntoView({block: "start", behavior: "smooth"})
-		})
+	// 	btn.addEventListener('click', (e) => {
+	// 		e.preventDefault();
+	// 		news.scrollIntoView({block: "start", behavior: "smooth"})
+	// 	})
+
+    // const clickedImages = document.querySelectorAll('.thumbImageContainer')
+
+    // clickedImages.forEach((img) => {
+    //     const clickID = img.getAttribute("data-modal");
+    //     const modal = document.getElementById(clickID)
+
+    //     img.addEventListener('click', (e) => {
+    //         modal.style.transition = 'height 250ms, opacity 650ms, width 500ms ease-out'
+    //         modal.style.height = "100%"
+    //         modal.style.width = "100%"
+    //         modal.style.opacity = 1
+    //     })
+    // })
     </script>
 </section>
+

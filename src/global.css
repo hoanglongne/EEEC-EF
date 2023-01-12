@@ -12,12 +12,14 @@
     filter: blur(5);
     transition: all 1s ease;
     transform: translateX(-100%);
+    visibility: hidden;
 }
 
 .show1 {
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
+    visibility: visible;
 }
 
 .fade2 {
@@ -25,12 +27,14 @@
     filter: blur(5);
     transition: all 1s ease;
     transform: translateX(100%);
+    visibility: hidden;
 }
 
 .show2 {
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
+    visibility: visible;
 }
 
 .fade3 {
@@ -38,24 +42,28 @@
     filter: blur(5);
     transition: all 1s ease;
     transform: translateX(100%);
+    visibility: hidden;
 }
 
 .show3 {
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
+    visibility: visible;
 }
 
 .bump {
     opacity: 0;
     filter:blur(10);
-    transform: scale(0)
+    transform: scale(0);
+    visibility: hidden;
 }
 .bumpafter {
     opacity: 1;
     filter:blur(0);
     transform: scale(1);
     transition: all 1s ease;
+    visibility: visible;
 }
 
 

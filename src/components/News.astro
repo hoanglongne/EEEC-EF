@@ -17,7 +17,9 @@
                 <div class="relative w-full h-full">
                         <div class="absolute left-28 top-6 w-[430px] h-[440px] bg-white z-20 rounded-xl border-black border-[1.5px]">
                             <div class="relative top-2 mx-auto w-[410px] h-[220px] overflow-clip rounded-xl drop-shadow-[0_2px_3px_rgba(0,0,0,0.3)]">
-                                <img src={newestPost.frontmatter.thumbnail} class="w-[410px] opacity-80" id="big-thumb-img" alt="">
+                                <a href={newestPost.url}>
+                                    <img src={newestPost.frontmatter.thumbnail} class="w-[410px] opacity-80" id="big-thumb-img" alt="">
+                                </a>
                             </div>
                             <div class="relative top-5 left-5">
                                 <span class="text-[11px] text-[#202131B2] tracking-widest">
@@ -30,7 +32,9 @@
                                 </button>
                             </div>
                         	<div class="relative top-6 left-5">
-					            <h1 class="font-bruno text-md tracking-[0.2em]">{newestPost.frontmatter.title}</h1>
+                                <a href={newestPost.url}>
+					                <h1 class="font-bruno text-md tracking-[0.2em] hover:underline underline-offset-1">{newestPost.frontmatter.title}</h1>
+                                </a>
 				            </div>
                             <div class="relative top-8 left-5 w-[95%]">
                                 <p class="text-[11px] text-[#202131B2] leading-[1.8em] tracking-[0.15em]">{newestPost.rawContent().slice(0,140)}.. <a href={newestPost.url} class="underline text-black">read more</a></p>
@@ -45,7 +49,9 @@
                     {threeSmallPost.map((post)=>(
                         <div class="grid grid-cols-3 gap-4">
                             <div class="h-[132.66px] overflow-clip rounded-xl border-black border-[1px] bg-[#FFFCF8]">
-                                <img class="min-h-[132.66px] max-h-[160px] brightness-90 mx-auto" src={post.frontmatter.thumbnail} />
+                                <a href={post.url}>
+                                    <img class="min-h-[132.66px] max-h-[160px] brightness-90 mx-auto" src={post.frontmatter.thumbnail} />
+                                </a>
                             </div>
                             <div class="col-span-2">
                                 <div class="relative">
@@ -62,7 +68,9 @@
                                     </span>
                                 </div>
                                 <div class="relative top-2 left-1">
-                                    <h2 class="text-[12px] tracking-[0.17rem]">{post.frontmatter.title}</h2>
+                                <a href={post.url}>
+                                    <h2 class="text-[12px] tracking-[0.17rem] hover:underline underline-offset-1">{post.frontmatter.title}</h2>
+                                </a>
                                 </div>
                                 <p class="relative top-4 left-1 text-[9px] leading-[1.8em] text-[#202131B2] tracking-[0.1rem]">
                                     {post.rawContent().slice(0,100)}.. <a href={post.url} class="underline text-black">read more</a>
