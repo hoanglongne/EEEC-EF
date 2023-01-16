@@ -5,8 +5,8 @@ const {mid, image, title, description, time, place, partners, color} = Astro.pro
 
 <div id={mid} class="h-0 w-0 opacity-0 relative z-20 flex justify-center items-center bg-[#3C3B3BA8] modal pointer-events-auto">
     <div class="bg-white grid grid-cols-2 z-10 w-[70%] h-[70%] rounded-[19px] border-white overflow-clip border-8">
-        <div class="h-full overflow-clip">
-            <img class="min-h-full min-w-[550px]" src={image} alt="">
+        <div class="h-full w-full relative">
+            <img class="h-full w-full absolute top-0 left-0" src={image} alt="">
         </div>
         <div class="grid grid-rows-3 ml-auto mr-auto mt-2 mb-20">
             <div class="flex flex-col justify-center items-center gap-6">
@@ -52,43 +52,12 @@ const {mid, image, title, description, time, place, partners, color} = Astro.pro
     <script>
 
     import '../js/modalClose.js'
-    // const closeBtns = document.querySelectorAll('.close-modal');
-
-    // closeBtns.forEach((btn) => {
-    //     btn.addEventListener('click', (e) => {
-    //         const modal = btn.closest('.modal')
-    //         modal.style.height = 0;
-    //         modal.style.width = 0;
-    //         modal.style.opacity = 0;
-    //     })
-    // })
-
-    // window.addEventListener('click', (e) => {
-    //          if(e.target.classList.contains('modal')){
-    //             e.target.style.height = 0;
-    //             e.target.style.width = 0;
-    //             e.target.style.opacity = 0;
-    //         }
-    //     }
-    // )
-
-    // const modals = document.querySelectorAll('.modal');
-    // modals.forEach((modal) => {
-    //     window.addEventListener('keydown', (e) => {
-    //         if (e.key=="Escape") {
-    //             modal.style.transition = '1s width 2s, opacity 500ms, height 500ms ease-out '
-    //             modal.style.height = 0;
-    //             modal.style.width = 0;
-    //             modal.style.opacity = 0;
-    //         }
-    //     })
-    // })
     </script>
 
-<style>
+<!-- <style>
 .modal {
     height: 0;
     opacity: 0;
     width: 0;
 }
-</style>
+</style> -->

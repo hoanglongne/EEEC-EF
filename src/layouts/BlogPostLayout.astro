@@ -19,12 +19,24 @@ import '../global.css'
   <astro-url data-nextUrl={nextUrl} data-prevUrl={prevUrl}>
   
   <main id="mainBody">
+
+    <div class="fixed flex flex-col gap-4 top-72 left-16 bg-white border-2 border-black rounded-full p-6">
+      <a class="homelink" href="/">
+        <svg id="svg1" width="65" height="75" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32.5" cy="32.5" r="29.5" fill="#E374A3" stroke="#E374A3" stroke-width="6"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M33 21L45 30.8147L44.09 31.9421L41.6587 29.9537V39.3683C41.6587 41.374 40.0435 43 38.0509 43H27.9491C25.9565 43 24.3413 41.374 24.3413 39.3683V29.9537L21.91 31.9421L21 30.8147L33 21ZM25.7844 28.7733V39.3683C25.7844 40.5717 26.7535 41.5473 27.9491 41.5473H30.1138V35.0102C30.1138 33.8067 31.0829 32.8311 32.2784 32.8311H33.7216C34.9171 32.8311 35.8862 33.8067 35.8862 35.0102V41.5473H38.0509C39.2465 41.5473 40.2156 40.5717 40.2156 39.3683V28.7733L33 22.8718L25.7844 28.7733ZM32.2784 34.2838C31.8799 34.2838 31.5569 34.609 31.5569 35.0102V41.5473H34.4431V35.0102C34.4431 34.609 34.1201 34.2838 33.7216 34.2838H32.2784Z" fill="#FCFCFC"/>
+        </svg>
+      </a>
+      <a class="backlink" href="/blog/">
+        <svg width="65" height="75" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32.5" cy="32.5" r="29.5" fill="#E374A3" stroke="#E374A3" stroke-width="6"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M27.8001 32L37 39.8113L35.5999 41L25 32L35.5999 23L37 24.1887L27.8001 32Z" fill="#FCFCFC"/>
+        </svg>
+      </a>
+    </div>
+
     
     <BlogHeader displayNum={displayNum} prevUrl={prevUrl} nextUrl={nextUrl} postsNumber={allPosts.length} />
-    {allPosts.map((post) => {
-      console.log(post.url)
-    })}
-    {console.log(nextUrl)}
     <NewsContainer maxW="max-w-[70%]" containerPadding="px-0" >
 
         <div class="w-full flex justify-center items-center px-20 mb-10 mt-6">
@@ -97,6 +109,19 @@ background-color: #FCF6ED;
   line-height: 2.5rem;
   margin-top: -80px;
   margin-bottom: -80px;
+}
+
+svg > circle {
+  transition: all 200ms ease-out
+}
+
+.homelink:hover > svg > circle {
+  fill: #CE4E83;
+  transform: translateY(-2%);
+}
+.backlink:hover > svg > circle {
+  fill: #CE4E83;
+  transform: translateY(-2%);
 }
 
 </style>
