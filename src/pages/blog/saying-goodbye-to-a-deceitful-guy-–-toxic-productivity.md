@@ -8,6 +8,7 @@ tag: Blog
 minutes: "7"
 date: 2022-12-30T07:24:41.465Z
 thumbnail: https://eeecblogging.files.wordpress.com/2022/07/toxic-productvt-01.jpg?w=3136
+bid: b04
 ---
 Tightly-spaced-houses-in-Sài-Gòn looking schedules are what you always aim for even though you know how impossible it is? An afternoon without completing two or three tasks makes you feel guilty and disappointed with yourself? Bingo! You completely match the topic we are going to discuss – toxic productivity.
 

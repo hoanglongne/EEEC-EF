@@ -42,14 +42,15 @@ const {page} = Astro.props;
 
 		<NewsContainer maxW="max-w-[84%]" containerPadding="px-10">
 			<NewsTools />
-			{page.data.map((post: { frontmatter: { title: any; tag: any; minutes: any; thumbnail: any; date: string | any[]; }; rawContent: () => string | any[]; url: any; })=> (
+			{page.data.map((post: { frontmatter: { title: any; tag: any; minutes: any; thumbnail: any;  bid: any; date: string | any[];}; rawContent: () => string | any[]; url: any; })=> (
 				<NewsBlock title={post.frontmatter.title} 
 				tag={post.frontmatter.tag} 
 				minutes={post.frontmatter.minutes} 
 				thumbnail={post.frontmatter.thumbnail} 
-				date={post.frontmatter.date.slice(0,10)}
+				date={post.frontmatter.date.slice(0,10)} 
 				content={post.rawContent().slice(0,300)}
 				url={post.url}
+				bid={post.frontmatter.bid}
 				/>
 			))}
 

@@ -8,6 +8,7 @@ tag: Blog
 minutes: "8"
 date: 2022-12-30T11:11:39.836Z
 thumbnail: https://eeecblogging.files.wordpress.com/2022/03/plagiarism403x.png
+bid: b02
 ---
 Humans thrived thanks to the recognition of patterns, it allows us to predict and expect what is coming. However, at where we are now on top of the food chain, too much identification could just simply become a **hindrance** to our relaxing afternoons, especially when it comes to music. Ever heard of two songs so similar you swear they could exchange the lyrics and would still remain the same? Or maybe a snippet from an instrumental? For the most part, that falls into the handiwork of sampling, but at what point is **interpreting** another’s work considered art theft? In the existing circumstances, there are a number of factors that differentiate the two, though only by a fine line.
 

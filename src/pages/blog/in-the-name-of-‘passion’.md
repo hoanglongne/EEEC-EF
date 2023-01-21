@@ -8,6 +8,7 @@ tag: Blog
 minutes: "6"
 date: 2022-12-30T07:29:35.818Z
 thumbnail: https://eeecblogging.files.wordpress.com/2022/08/in-the-name-of-passion.png
+bid: b01
 ---
 In our culture, many idealize passion. We see it as some lofty cure-all for most of the career choices. Movies, success stories and history all celebrate it as life’s ultimate goal, as the final solution for all of our pain and struggle. There come a **myriad** of work mantras that glorify passion, such as “Do what you love and you’ll never work a day in your life,” or “All you need is passion.” But in today’s ever-dynamic labor market, we may have to reconsider the value of these **perceptions**: Is it really good for us to feel as if we aren’t working at all when we actually are?
 

@@ -8,6 +8,7 @@ tag: Blog
 minutes: "4"
 date: 2022-12-30T07:33:19.537Z
 thumbnail: https://m.media-amazon.com/images/I/51H36+B6OSL._AC_SY780_.jpg
+bid: b03
 ---
 A book for summertime bounce, refresh your holiday with a glass of orange juice and “My Sweet Orange Tree”.
 

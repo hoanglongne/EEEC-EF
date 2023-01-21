@@ -8,6 +8,7 @@ tag: News
 minutes: "6"
 date: 2022-12-30T07:49:49.923Z
 thumbnail: https://eeecblogging.files.wordpress.com/2022/12/violent_2.png
+bid: b05
 ---
 “Violent Night” is a Christmas movie that came out early December, 2022. Starring David Harbour as Santa and directed by Tommy Wirloka. Nearly two hours of action-packed fight scenes did nothing to take away the amount of Christmas joy this movie brings. The message it carries is simple: enjoy Christmas again, you cynical people!
 
