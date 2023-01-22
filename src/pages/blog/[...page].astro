@@ -1,6 +1,6 @@
 ---
 import NavBar from "../../components/NavBar.astro";
-import NewsBlock from "../../components/NewsBlock.astro";
+import NewsBlock from "../../components/NewsReactBlock.jsx"
 import NewsContainer from "../../components/NewsContainer.astro";
 import Layout from "../../layouts/Layout.astro";
 import '../../global.css'
@@ -43,7 +43,7 @@ const {page} = Astro.props;
 		<NewsContainer maxW="max-w-[84%]" containerPadding="px-10">
 			<NewsTools />
 			{page.data.map((post: { frontmatter: { title: any; tag: any; minutes: any; thumbnail: any;  bid: any; date: string | any[];}; rawContent: () => string | any[]; url: any; })=> (
-				<NewsBlock title={post.frontmatter.title} 
+				<NewsBlock client:load title={post.frontmatter.title} 
 				tag={post.frontmatter.tag} 
 				minutes={post.frontmatter.minutes} 
 				thumbnail={post.frontmatter.thumbnail} 

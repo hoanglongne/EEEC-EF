@@ -209,3 +209,7 @@
     opacity: 0;
     visibility: hidden;
 }
+
+.like-button.clicked {
+    fill: rgb(240, 116, 173);
+}
