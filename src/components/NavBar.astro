@@ -1,12 +1,13 @@
 ---
 const {aboutLink, newsLink} = Astro.props
+import Logo from '../images/Logo.png'
 ---
 
 
 <nav class="navbar">
     <div class="logo"> 
         <a href="/">
-            <img src="https://i.ibb.co/XLYf7Qy/Logo.png" alt="EEEC logo"/>
+            <img src={Logo} alt="EEEC logo"/>
         </a>
     </div>
     

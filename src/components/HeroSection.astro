@@ -1,5 +1,12 @@
 ---
 import heroImage1 from '../images/hero-image1.png'
+import thumb1 from '../images/thumb1.png'
+import thumb2 from '../images/thumb2.png'
+import thumb3 from '../images/thumb3.png'
+import thumb4 from '../images/thumb4.png'
+import play from '../images/play.png'
+import calltoaction from '../images/calltoaction.png'
+import leftIllustration from '../images/left-illustration.png'
 ---
 
 
@@ -9,7 +16,7 @@ import heroImage1 from '../images/hero-image1.png'
         WHOLE WORLD TOGETHER!</h1>
         <div class="flex mt-28">
             <div>
-            <img src="https://i.ibb.co/sbC3dWZ/Group-115.png" alt="left-illustration" class="object-cover w-40 pt-2" />
+            <img src={leftIllustration} alt="left-illustration" class="object-cover w-40 pt-2" />
             </div>
             <ul class="flex flex-col gap-y-5 text-xl ml-8 tracking-widest items-start list-none font-display text-gray-blue">
                 <li class="fade1">English</li>
@@ -22,10 +29,10 @@ import heroImage1 from '../images/hero-image1.png'
     <div class="pb-20">
         <img src={heroImage1} id="hero" alt="bigHero1" class="object-cover h-[500px] -mt-16 hero">
         <div class="flex mt-4 gap-6 ml-20">
-            <a><img id="thumbchange1" class="object w-12 hover:translate-y-2 ease-in duration-100" src="https://i.ibb.co/p3SGJww/thumb1.png"  alt="thumb1"></a>
-            <a><img id="thumbchange2" class="object w-12 hover:translate-y-2 ease-in duration-100" src="https://i.ibb.co/Mkzqhwn/thumb2.png" alt="thumb2"/></a>
-            <a><img id="thumbchange3" class="object w-12 hover:translate-y-2 ease-in duration-100" src="https://i.ibb.co/bBXnWHH/thumb3.png"  alt="thumb3"/></a>
-            <a><img id="thumbchange4" class="object w-12 hover:translate-y-2 ease-in duration-100" src="https://i.ibb.co/zPcnd66/thumb4.png"  alt="thumb4"/></a>
+            <a><img id="thumbchange1" class="object w-12 hover:translate-y-2 ease-in duration-100" src={thumb1}  alt="thumb1"></a>
+            <a><img id="thumbchange2" class="object w-12 hover:translate-y-2 ease-in duration-100" src={thumb2} alt="thumb2"/></a>
+            <a><img id="thumbchange3" class="object w-12 hover:translate-y-2 ease-in duration-100" src={thumb3}  alt="thumb3"/></a>
+            <a><img id="thumbchange4" class="object w-12 hover:translate-y-2 ease-in duration-100" src={thumb4}  alt="thumb4"/></a>
         </div>
     </div>
     
@@ -49,8 +56,8 @@ import heroImage1 from '../images/hero-image1.png'
         </div>
 
         <a href="/blog" class="pb-10">
-            <img id="blogButton-ring" class="object w-40 ml-28 bottom-0" src="https://i.ibb.co/R6JGTpK/calltoaction.png" alt="calltoaction" alt="calltoaction" />
-            <img id="blogButton-triangle" src="https://i.ibb.co/rZ3yW2j/play.png" alt="play" class="w-6 relative bottom-[84px] left-[180px]">
+            <img id="blogButton-ring" class="object w-40 ml-28 bottom-0" src={calltoaction} alt="calltoaction" alt="calltoaction" />
+            <img id="blogButton-triangle" src={play} alt="play" class="w-6 relative bottom-[84px] left-[180px]">
         </a>
     </div>
 

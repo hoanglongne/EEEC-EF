@@ -1,20 +1,15 @@
 ---
 import NavBar from "../../components/NavBar.astro";
-import NewsBlock from "../../components/NewsReactBlock.jsx"
 import NewsContainer from "../../components/NewsContainer.astro";
+import NewsTools from "../../components/NewsTools.astro";
 import Layout from "../../layouts/Layout.astro";
+import NewsBlock from "../../components/NewsReactBlock.jsx"
 import '../../global.css'
 import Pagination from "../../components/Pagination.jsx";
-import NewsTools from "../../components/NewsTools.astro";
 import Footer from "../../components/Footer.astro";
 
-export async function getStaticPaths({paginate}) {
-	let allPosts = await Astro.glob("./*.md");
-	const SortedPosts = allPosts.sort((a , b ) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
-  	return paginate(SortedPosts, { pageSize: 2 });
-}
-
-const {page} = Astro.props;
+let allPosts = await Astro.glob("./*.md");
+const SortedPosts = allPosts.sort((a , b ) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
 ---
 
 <Layout title="EEEC Blog">
@@ -23,7 +18,7 @@ const {page} = Astro.props;
 		<script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 	</head>
 
-	<body class="font-bruno">
+	<body class="font-bruno h-[1400px]">
 
 		<NavBar aboutLink="/#about-section" newsLink='/blog/' />		
 		<div>
@@ -42,7 +37,7 @@ const {page} = Astro.props;
 
 		<NewsContainer maxW="max-w-[84%]" containerPadding="px-10">
 			<NewsTools />
-			{page.data.map((post: { frontmatter: { title: any; tag: any; minutes: any; thumbnail: any;  bid: any; date: string | any[];}; rawContent: () => string | any[]; url: any; })=> (
+			<!-- {page.data.map((post: { frontmatter: { title: any; tag: any; minutes: any; thumbnail: any;  bid: any; date: string | any[];}; rawContent: () => string | any[]; url: any; })=> (
 				<NewsBlock client:load title={post.frontmatter.title} 
 				tag={post.frontmatter.tag} 
 				minutes={post.frontmatter.minutes} 
@@ -52,9 +47,7 @@ const {page} = Astro.props;
 				url={post.url}
 				bid={post.frontmatter.bid}
 				/>
-			))}
-
-			<Pagination page={page} />
+			))} -->
 
 		</NewsContainer>
 
@@ -77,17 +70,3 @@ const {page} = Astro.props;
 
 	<Footer />
 </Layout>
-
-<style>
-body {
-    background-color: #FCF6ED;
-}
-
-#green-particle {
-	animation: 16s ease-in-out wiggle infinite;
-}
-#blue-particle {
-	animation: 34s linear wiggle infinite;
-}
-
-</style>
