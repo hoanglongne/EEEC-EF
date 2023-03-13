@@ -7,7 +7,8 @@ module.exports = {
 			'sans': ['Inria Sans'],
 			'tech': ['Share Tech'],
 			'binline': ['Bungee Inline'],
-			'bruno': ['Bruno Ace']
+			'bruno': ['Bruno Ace'],
+			'mono': ['Nova Mono']
 		},
 		extend: {
 			colors: {
